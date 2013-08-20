@@ -1,0 +1,29 @@
+<div class="main-container"  ng-controller="DashboardCtrl">
+  <header>
+    <div class="page-header"></div>
+  </header>
+  <div class="data-container">
+    <div class="tab showReport"><a href="#/{{selection}}">Back</a></div>
+    <div class="navigation-bar">
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[sub_selection=='tab1']" ng-click="sub_selection='tab1'">Sub Tab 1</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[sub_selection=='tab2']" ng-click="sub_selection='tab2'">Sub Tab 2</div>
+    </div>
+
+    <div class="data-view" ng-show="sub_selection=='tab1'">
+      {{selection}}
+      : Sub Tab 1 : Data
+    </div>
+
+    <div class="data-view" ng-show="sub_selection=='tab2'">
+      {{selection}}
+      : Sub Tab 2 : Data
+    </div>
+
+
+  </div>
+  <footer>
+    <div class="page-header footer-top">
+      <div class="compute-button"></div>
+    </div>
+  </footer>
+</div>

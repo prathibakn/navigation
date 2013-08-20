@@ -1,0 +1,67 @@
+<div class="main-container"  ng-controller="DashboardCtrl">
+  <header>
+    <div class="page-header"></div>
+  </header>
+  <div class="data-container">
+    <div class="navigation-bar">
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[selection=='tab1']" ng-click="selection='tab1'">Tab 1</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[selection=='tab2']" ng-click="selection='tab2'">Tab 2</div>
+      <div class="tab showReport"><a href="#/report/{{selection}}">Show Report</a></div>
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab1'" ng-click="selection='tab1Details'">      
+      Tab 1 : Data
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab1Compute'">
+      Tab 1 : Computing....
+      <div class="tab showReport" ng-click="selection='tab1Computed'">Compute</div>
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab1Computed'" ng-click="selection='tab1ComputedDetails'">
+      Tab 1 : Computed
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab1ComputedDetails'"  ng-click="selection='tab1Computed'">
+      Tab 1 : Computed
+      Tab 1 : Details
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab1Details'" ng-click="selection='tab1'">
+      Tab 1 : Data
+      Tab 1 : Details
+    </div>
+
+
+    <div class="data-view" ng-show="selection=='tab2'" ng-click="selection='tab2Details'">
+      Tab 2 : Data
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab2Compute'">
+      Tab 2 : Computing....
+      <div class="tab showReport" ng-click="selection='tab2Computed'">Compute</div>
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab2Computed'"  ng-click="selection='tab2ComputedDetails'">
+      Tab 2 : Computed
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab2ComputedDetails'"  ng-click="selection='tab2Computed'">
+      Tab 2 : Computed
+      Tab 2 : Details
+    </div>
+
+    <div class="data-view" ng-show="selection=='tab2Details'" ng-click="selection='tab2'">
+      Tab 2 : Data
+      Tab 2 : Details
+    </div>
+
+
+  </div>
+  <footer>
+    <div class="page-header footer-top">
+      <div class="compute-button" ng-click="selection=selection+'Compute'"></div>
+    </div>
+
+  </footer>
+</div>
