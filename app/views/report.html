@@ -6,8 +6,8 @@
     <div class="tab showReport"><a href="#/{{selection}}">Back</a></div>
 
     <div class="navigation-bar">
-      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub1']" ng-click="subSelection='sub1{{selection}}'">Sub Tab 1</div>
-      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub2']" ng-click="subSelection='sub2{{selection}}'">Sub Tab 2</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub1']" ng-click="subSelection='sub1'+selection">Sub Tab 1</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub2']" ng-click="subSelection='sub2'+selection">Sub Tab 2</div>
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub1tab1'">
