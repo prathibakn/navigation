@@ -3,5 +3,5 @@
 angular.module('navigationApp')
 .controller('DashboardCtrl', function ($scope, $routeParams) {
         $scope.selection = $routeParams["selection"];
-        $scope.sub_selection = 'tab1';
+        $scope.subSelection = 'sub1' + $scope.selection;
     });
