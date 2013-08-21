@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('navigationApp', [])
-.config(function ($routeProvider) {
+var app = angular.module('navigationApp', []);
+app.config(function ($routeProvider) {
         $routeProvider
             .when('/:selection', {
                 templateUrl: 'views/dashboard.html',

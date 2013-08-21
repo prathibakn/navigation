@@ -6,7 +6,7 @@
     <div class="navigation-bar">
       <div ng-class="{true: 'tab selected', false: 'tab unselected'}[selection.substr(0,4)=='tab1']" ng-click="selection='tab1'">Tab 1</div>
       <div ng-class="{true: 'tab selected', false: 'tab unselected'}[selection.substr(0,4)=='tab2']" ng-click="selection='tab2'">Tab 2</div>
-      <div class="tab showReport"><a href="#/report/{{selection}}">Show Report</a></div>
+      <div class="tab showReport" ng-click="clicked('/report/'+selection)">Show Report</div>
     </div>
 
     <div class="data-view" ng-show="selection=='tab1'" ng-click="selection='tab1Details'">      
@@ -15,7 +15,8 @@
 
     <div class="data-view" ng-show="selection=='tab1Compute'">
       Tab 1 : Computing....
-      <div class="tab showReport" ng-click="selection='tab1Computed'">Compute</div>
+      <div class="tab showReport" ng-click="compute('tab1Computed')">Compute</div>
+      <div class="spinner" ng-show="spinner1"><img src="images/wait.gif" alt="Be patient..." /></div>
     </div>
 
     <div class="data-view" ng-show="selection=='tab1Computed'" ng-click="selection='tab1ComputedDetails'">
@@ -39,7 +40,8 @@
 
     <div class="data-view" ng-show="selection=='tab2Compute'">
       Tab 2 : Computing....
-      <div class="tab showReport" ng-click="selection='tab2Computed'">Compute</div>
+      <div class="tab showReport" ng-click="compute('tab2Computed')">Compute</div>
+      <div class="spinner" ng-show="spinner2"><img src="images/wait.gif" alt="Be patient..." /></div>
     </div>
 
     <div class="data-view" ng-show="selection=='tab2Computed'"  ng-click="selection='tab2ComputedDetails'">
