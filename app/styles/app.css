@@ -11,7 +11,8 @@ body{
 	position: absolute;
 	height: 40px;
 	width: 1024px;
-	background: #002960;
+ background: #002960;
+ cursor:pointer;
 }
 
 .footer-top{

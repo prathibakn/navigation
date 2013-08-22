@@ -3,7 +3,7 @@
 var app = angular.module('navigationApp', []);
 app.config(function ($routeProvider) {
         $routeProvider
-            .when('/:selection', {
+            .when('/', {
                 templateUrl: 'views/dashboard.html',
                         controller: 'DashboardCtrl'
                         })

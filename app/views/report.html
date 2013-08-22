@@ -3,49 +3,49 @@
     <div class="page-header"></div>
   </header>
   <div class="data-container">
-    <div class="tab showReport" ng-click="clicked('/'+selection)">Back</div>
+    <div class="tab showReport" ng-click="clicked('/', selection)">Back</div>
 
     <div class="navigation-bar">
-      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub1']" ng-click="subSelection='sub1'+selection">Sub Tab 1</div>
-      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub2']" ng-click="subSelection='sub2'+selection">Sub Tab 2</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub1']" ng-click="subSelection='sub1'+selection.substr(0,4)">Sub Tab 1</div>
+      <div ng-class="{true: 'tab selected', false: 'tab unselected'}[subSelection.substr(0,4)=='sub2']" ng-click="subSelection='sub2'+selection.substr(0,4)">Sub Tab 2</div>
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub1tab1'">
-      {{selection}}
+      {{selection.substr(0,4)}}
       : Sub Tab 1 : Data
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub2tab1'">
-      {{selection}}
+      {{selection.substr(0,4)}}
        Sub Tab 2 : Data: Section 1
       <div class="tab showReport" ng-click="subSelection='sub2tab1sec2'">Show</div>
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub2tab1sec2'">
-      {{selection}}
+      {{selection.substr(0,4)}}
       Sub Tab 2 : Data: Section 1
       ---------------------------
-      <div class="tab showReport" >Show</div>
+      <div class="tab showReport" ng-click="subSelection='sub2tab1'">Show</div>
       Sub Tab 2 : Data: Section 2
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub1tab2'">
-      {{selection}}
+      {{selection.substr(0,4)}}
       {{subSelection}}
       : Sub Tab 1 : Data
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub2tab2'">
-      {{selection}}
+      {{selection.substr(0,4)}}
       Sub Tab 2 : Data: Section 1
       <div class="tab showReport" ng-click="subSelection='sub2tab2sec2'">Show</div>
     </div>
 
     <div class="data-view" ng-show="subSelection=='sub2tab2sec2'">
-      {{selection}}
+      {{selection.substr(0,4)}}
       Sub Tab 2 : Data: Section 1
       -----------------------------
-      <div class="tab showReport" >Show</div>
+      <div class="tab showReport" ng-click="subSelection='sub2tab2'" >Show</div>
       Sub Tab 2 : Data: Section 2
     </div>
 
